@@ -116,3 +116,18 @@ func ResultErrorPtr(errType, message string) *Result {
 	r := ResultError(&hostfunc.ErrorDetail{Type: errType, Message: message})
 	return &r
 }
+
+// WithField adds a field to the Result data and returns the pointer for chaining.
+func (r *Result) WithField(key string, value any) *Result {
+	if r.Data == nil {
+		r.Data = make(map[string]any)
+	}
+	r.Data[key] = value
+	return r
+}
+
+// WithData sets the data map for the Result and returns the pointer for chaining.
+func (r *Result) WithData(data map[string]any) *Result {
+	r.Data = data
+	return r
+}
