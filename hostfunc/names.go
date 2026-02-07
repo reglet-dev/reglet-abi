@@ -8,4 +8,5 @@ const (
 	TCPConnectOp  = "tcp_connect"
 	SMTPConnectOp = "smtp_connect"
 	ExecCommandOp = "exec_command"
+	LogMessageOp  = "log_message"
 )
